@@ -55,9 +55,9 @@ public class mt {
         System.out.println("\nFita final: " + new String(fita));
 
         if (valido) {
-            System.out.println("Sequência ACEITA");
+            System.out.println("ACEITO");
         } else {
-            System.out.println("Sequência REJEITADA");
+            System.out.println("ERRROOUU!!!!");
         }
 
         scanner.close();
