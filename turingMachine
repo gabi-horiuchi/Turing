@@ -1,0 +1,65 @@
+package turingMachine;
+
+import java.util.Scanner;
+
+public class mt {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("NIVEL NINJA: ");
+        String entrada = scanner.nextLine().toUpperCase();
+
+        char[] fita = entrada.toCharArray();
+
+        int i = 0;
+        int T = 0;
+        int N = 0;
+        int G = 0;
+
+        while (i < fita.length && fita[i] == 'T') {
+            fita[i] = 'X';
+            T++;
+            System.out.println("Fita: " + new String(fita));
+            i++;
+        }
+        while (i < fita.length && fita[i] == 'N') {
+            fita[i] = 'X';
+            N++;
+            System.out.println("Fita: " + new String(fita));
+            i++;
+        }
+        while (i < fita.length && fita[i] == 'G') {
+            fita[i] = 'X';
+            G++;
+            System.out.println("Fita: " + new String(fita));
+            i++;
+        }
+
+        boolean valido = true;
+
+        if (i != fita.length) {
+            valido = false;
+        }
+
+        if (T == 0 || N == 0 || G == 0) {
+            valido = false;
+        }
+        
+        if (!(T == N && N == G)) {
+            valido = false;
+        }
+
+
+        System.out.println("\nFita final: " + new String(fita));
+
+        if (valido) {
+            System.out.println("Sequência ACEITA");
+        } else {
+            System.out.println("Sequência REJEITADA");
+        }
+
+        scanner.close();
+    }
+}
